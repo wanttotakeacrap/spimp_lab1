@@ -10,7 +10,7 @@
     :else 0))
 
 (defn -main []
-  (println "Тeст")
+  (println "Тeсты")
   (println "[1 2 3] -" (sum-nested [1 2 3]))
   (println "[1 [2 3] 4] -" (sum-nested [1 [2 3] 4]))
   (println "[1 [2 [3 4]] 5] -" (sum-nested [1 [2 [3 4]] 5]))
