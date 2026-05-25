@@ -1,0 +1,30 @@
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+(println "[1 2 3] -" (sum-nested [1 2 3]))
+; Syntax error compiling at (c:\Users\User\Desktop\Новая папка\учеба\6 сем\спимп\laba1\src\laba1\core.clj:14:24).
+; Unable to resolve symbol: sum-nested in this context
+clj꞉laba1.core꞉> 
+[]
+clj꞉laba1.core꞉> 
+sum-nested
+; Syntax error compiling at (c:\Users\User\Desktop\Новая папка\учеба\6 сем\спимп\laba1\src\laba1\core.clj:0:0).
+; Unable to resolve symbol: sum-nested in this context
+clj꞉laba1.core꞉> 
+(defn sum-nested
+  [coll]
+  (cond
+    (nil? coll) 0
+    (number? coll) coll
+    (coll? coll) (reduce + 0 (map sum-nested coll))
+    :else 0))
+clj꞉laba1.core꞉> 
+(println "Тест")
+clj꞉laba1.core꞉> 
+(println "Тест")
+clj꞉laba1.core꞉> 
+(println "[1 [2 3] 4] -" (sum-nested [1 [2 3] 4]))
+clj꞉laba1.core꞉> 
+(println "[1 [2 [3 4]] 5] -" (sum-nested [1 [2 [3 4]] 5]))
+clj꞉laba1.core꞉> 
+(println "[1 2 3] -" (sum-nested [1 2 3]))
+clj꞉laba1.core꞉> 
